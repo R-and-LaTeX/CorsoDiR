@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\usepackage{Sweave}
+\begin{document}
+\input{10-CaricamentoFile-concordance}
+\section{Caricamento dati da file}
+R da la possibilità di caricare dati che sono salvati in differenti formati:
+\begin{itemize}
+  \item txt
+  \item csv
+  \item xlsx
+  \item RData
+\end{itemize}
+
+\subsection{Caricamento da txt}
+Per caricare i dati da un file con estensione \textbf{txt} è possibile utilizzare
+il comando \texttt{read.delim2} al quale è necessario specificare alcune opzioni:
+\begin{itemize}
+  \item il nome del file;
+  \item \texttt{header} da specificare a \texttt{TRUE} oppure \texttt{FALSE} a 
+  seconda che si voglia che la prima riga venga interpretata come intestazione;
+  \item \texttt{sep} per specificare il separatore tra i dati (tra virgolette);
+  \item \texttt{dec} per specificare il carattere che divide i decimali.
+\end{itemize}
+
+\begin{Schunk}
+\begin{Sinput}
+> read.delim2("file.txt", header = TRUE, sep = "\t", dec = ",")
