@@ -1,0 +1,35 @@
+% Eliminare colonne vuote
+% Verificare che variabili qualitative lo siano davvero
+\chapter{Leggere correttamente i dati}
+
+A volte può capitare che i dati che abbiamo non siano completi, o che ci sia la 
+necessità di verificare che alcune variabili abbiano le proprietà desiderate. 
+Per fare ciò R mette a disposizione dei semplici comandi che verranno spiegati 
+di seguito.
+
+\section{Filtrare dati letti}
+
+Questa funzionalità è particolarmente utile quanto ci ritroviamo con dei dati 
+che possono contenere delle celle ad esempio vuote o con dati che sappiamo non 
+essere corretti.
+
+Il comando per vedere se ci sono dati vuoti in un \textit{dataset} è 
+\texttt{is.na()}, dove, come parametro della funzione, dobbiamo passare i 
+nostri dati. In aggiunta a questo comando possiamo aggiungere \texttt{sum()}, 
+che permette di contare varie elementi. Combinando \texttt{sum()} con 
+\texttt{is.na()} avremo il numero di celle che contengono dati vuoti.
+
+Proviamo con un esempio:
+<<>>=
+
+library(ISLR)
+data(Hitters)
+dim(Hitters)
+
+# Quanti dati sono incompleti?
+sum(is.na(Hitters))
+@
+
+Per esempio con il \textit{dataset} R ci dice che ci sono $59$ dati nulli.
+
+% TODO: see if data are mantained in RAM
