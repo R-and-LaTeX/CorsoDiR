@@ -135,7 +135,7 @@ sympy-plots-for-*.tex/
 
 res/listOfSections.tex
 
-Tesi.zip
 bin/*
 *.backup
 *.kate-swp
+*.Rnw.generated.tex
