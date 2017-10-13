@@ -16,7 +16,7 @@ essere corretti.
 Il comando per vedere se ci sono dati vuoti in un \textit{dataset} è 
 \texttt{is.na()}, dove, come parametro della funzione, dobbiamo passare i 
 nostri dati. In aggiunta a questo comando possiamo aggiungere \texttt{sum()}, 
-che permette di contare varie elementi. Combinando \texttt{sum()} con 
+che permette di contare vari elementi. Combinando \texttt{sum()} con 
 \texttt{is.na()} avremo il numero di celle che contengono dati vuoti.
 
 Proviamo con un esempio:
@@ -31,5 +31,3 @@ sum(is.na(Hitters))
 @
 
 Per esempio con il \textit{dataset} R ci dice che ci sono $59$ dati nulli.
-
-% TODO: see if data are mantained in RAM
