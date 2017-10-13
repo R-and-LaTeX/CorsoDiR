@@ -139,4 +139,9 @@ bin/*
 *.backup
 *.kate-swp
 res/Rnw/*.Rnw.generated.tex
+res/sections/*.Rnw.generated.tex
 *.include.generated.tex
+
+.Rhistory
+
+.fuse_hidden*

@@ -1,7 +1,3 @@
-\documentclass{article}
-
-\begin{document}
-\SweaveOpts{concordance=TRUE}
 \section{Caricamento dati da file}
 R da la possibilità di caricare dati che sono salvati in differenti formati:
 \begin{itemize}
@@ -30,12 +26,13 @@ A questo comando possono essere specificate anche altre opzioni, qui sono
 riportate le principale. Per una lista esaustiva è sufficiente dare il comando
 \texttt{?read.delim}.
 
-<<Esempio, eval=false>>=
+<<eval=FALSE>>=
 read.delim("file.txt", header = TRUE, sep = "\t", dec = ",")
-# In questo esempio si vuole caricare il file 'file.txt', specificando 
-# che nella prima riga troviamo le intestazioni della tabella, i vari 
-# campi sono divisi tramite 'tab' e i decimali sono specificati tramite 
-# la virgola, come nella notazione italiana
+# In questo esempio si vuole caricare il file 'file.txt', 
+# specificando che nella prima riga troviamo le intestazioni 
+# della tabella, i vari campi sono divisi tramite 'tab' e i 
+# decimali sono specificati tramite la virgola, come nella 
+# notazione italiana
 @
 
 \subsection{Caricamento da csv}
@@ -44,10 +41,11 @@ precedente, l'unica differenza è che il comando da utilizzare questa volta è
 \texttt{read.csv}. Le opzioni da specificare successivamente sono le stesse
 del caso di file con estensione \emph{txt}. Nel caso in cui non venga 
 specificato alcun separatore quello di default utilizzato è la virgola.
-<<Esempio, eval=false>>=
+<<eval=FALSE>>=
 read.csv("file.csv", header = TRUE)
-# In questo esempio si vuole caricare il file 'file.csv', specificando 
-# che nella prima riga troviamo le intestazioni della tabella
+# In questo esempio si vuole caricare il file 'file.csv',
+# specificando che nella prima riga troviamo le intestazioni 
+# della tabella
 @
 
 \subsection{Caricamento da xls}
@@ -66,7 +64,7 @@ comando \texttt{read.xls}, al quale è possibile specificare i seguenti:
 Anche in questo caso è possibile specificare altre opzione che però noi non 
 vedremo. È inoltre possibile specificare alcune delle opzioni disponibili per 
 gli altri formati.
-<<Esempio, eval=FALSE>>=
+<<eval=FALSE>>=
 library(gdata)
 read.xls("file.xls", header = TRUE, sheet=2)
 # In questo esempio si vuole caricare il secondo foglio del file 
@@ -92,11 +90,12 @@ Come negli altri casi è possibile definire altre opzioni.
 indicare o il numero del foglio di cui si vogliono caricare i dati o
 il nome dello stesso.
 
-<<Esempio, eval=FALSE>>=
+<<eval=FALSE>>=
 library(xlsx)
 read.xlsx("file.xlsx", header=TRUE, sheetName="prova")
-# In questo esempio si vuole caricare il foglio con nome "prova" del file 
-# 'file.xlsx', dove nella prima riga sono specificate le intestazioni
+# In questo esempio si vuole caricare il foglio con nome "prova" del 
+# file 'file.xlsx', dove nella prima riga sono specificate le 
+# intestazioni
 @
 
 \subsection{Caricamento da RData}
@@ -108,7 +107,7 @@ percorso in cui vogliamo salvare il file seguito dal nome del file). Per
 "ricaricare" questo tipo di file è sufficiente utilizzare il comando 
 \texttt{load} specificando il percorso del file. 
 
-<<Esempio, eval=FALSE>>=
+<<eval=FALSE>>=
 save("file.RData")
 # Chiudo R
 # ...
@@ -116,5 +115,3 @@ save("file.RData")
 load("file.RData")
 # In questo modo ritrovo tutto ciò che avevo caricato prima
 @
-
-\end{document}

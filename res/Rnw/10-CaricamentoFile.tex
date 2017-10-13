@@ -1,8 +1,3 @@
-\documentclass{article}
-
-\usepackage{Sweave}
-\begin{document}
-\input{10-CaricamentoFile-concordance}
 \section{Caricamento dati da file}
 R da la possibilità di caricare dati che sono salvati in differenti formati:
 \begin{itemize}
@@ -34,10 +29,11 @@ riportate le principale. Per una lista esaustiva è sufficiente dare il comando
 \begin{Schunk}
 \begin{Sinput}
 > read.delim("file.txt", header = TRUE, sep = "\t", dec = ",")
-> # In questo esempio si vuole caricare il file 'file.txt', specificando 
-> # che nella prima riga troviamo le intestazioni della tabella, i vari 
-> # campi sono divisi tramite 'tab' e i decimali sono specificati tramite 
-> # la virgola, come nella notazione italiana
+> # In questo esempio si vuole caricare il file 'file.txt', 
+> # specificando che nella prima riga troviamo le intestazioni 
+> # della tabella, i vari campi sono divisi tramite 'tab' e i 
+> # decimali sono specificati tramite la virgola, come nella 
+> # notazione italiana
 \end{Sinput}
 \end{Schunk}
 
@@ -50,8 +46,9 @@ specificato alcun separatore quello di default utilizzato è la virgola.
 \begin{Schunk}
 \begin{Sinput}
 > read.csv("file.csv", header = TRUE)
-> # In questo esempio si vuole caricare il file 'file.csv', specificando 
-> # che nella prima riga troviamo le intestazioni della tabella
+> # In questo esempio si vuole caricare il file 'file.csv',
+> # specificando che nella prima riga troviamo le intestazioni 
+> # della tabella
 \end{Sinput}
 \end{Schunk}
 
@@ -103,8 +100,9 @@ il nome dello stesso.
 \begin{Sinput}
 > library(xlsx)
 > read.xlsx("file.xlsx", header=TRUE, sheetName="prova")
-> # In questo esempio si vuole caricare il foglio con nome "prova" del file 
-> # 'file.xlsx', dove nella prima riga sono specificate le intestazioni
+> # In questo esempio si vuole caricare il foglio con nome "prova" del 
+> # file 'file.xlsx', dove nella prima riga sono specificate le 
+> # intestazioni
 \end{Sinput}
 \end{Schunk}
 
@@ -127,5 +125,3 @@ percorso in cui vogliamo salvare il file seguito dal nome del file). Per
 > # In questo modo ritrovo tutto ciò che avevo caricato prima
 \end{Sinput}
 \end{Schunk}
-
-\end{document}
