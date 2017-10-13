@@ -138,4 +138,5 @@ res/listOfSections.tex
 bin/*
 *.backup
 *.kate-swp
-*.Rnw.generated.tex
+res/Rnw/*.Rnw.generated.tex
+*.include.generated.tex
