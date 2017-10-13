@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\usepackage{Sweave}
+\begin{document}
+\input{40-SelezioneRigheColonne-concordance}
+\section{Selezione di righe e colonne}
+Quando sono stati caricati correttamente i dati spesso è necessaria solamente
+una parte di essi, per la visualizzazione oppure poichè alcuni sono più 
+rilevanti di altri. 
+
+Per fare ciò R permette di utilizzare la notazione con le parentesi quadre.
+In pratica presa una variabile con cui possiamo accedere ai nostri dati, 
+per esempio \texttt{v}, con la notazione \textit{v[x, y]} possiamo accedere
+al dato che si trova alla riga \textit{x} della colonna \textit{y}. Molto 
+spesso succede che sia necessario prendere tutte le colonne di una certa riga
+o, viceversa, tutte le righe di una certa colonna. In questo caso è sufficiente
+utilizzare rispettivamente la notazione \texttt{v[x, ]} e \texttt{v[, y]}.
+
+R inoltre permette di selezionare più righe (o colonne allo stesso modo). Per 
+fare questo basta indicare tra le parentesi quadre \texttt{x1:x2}, dove 
+\texttt{x1} rappresenta la riga di inizio e \texttt{x2}
+
+\begin{Schunk}
+\begin{Sinput}
+> library(MASS)
+> # Carico una libreria che contiene alcuni dataset
+> data(Boston)
+> # Caricamento dal dataset Boston
+> v<-Boston
+> # Associo a v il dataset
+> v[3,6]
+> v[3,]
+> v[,6]
+> v[3:9,6]
+> v[,6:12]
+\end{Sinput}
+\end{Schunk}
+
+\end{document}
