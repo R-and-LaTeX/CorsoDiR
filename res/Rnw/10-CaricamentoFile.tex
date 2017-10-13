@@ -108,4 +108,24 @@ il nome dello stesso.
 \end{Sinput}
 \end{Schunk}
 
+\subsection{Caricamento da RData}
+Certe volte invece si vogliono salvare i dati che sono utilizzati durante
+l'utilizzo di R. Per fare ciò è possibile utilizzare il comando 
+\texttt{save} al quale dobbiamo passare il nome con cui vogliamo memorizzare
+il file, con l'estensione \texttt{.RData} (è possibile anche specificare il 
+percorso in cui vogliamo salvare il file seguito dal nome del file). Per 
+"ricaricare" questo tipo di file è sufficiente utilizzare il comando 
+\texttt{load} specificando il percorso del file. 
+
+\begin{Schunk}
+\begin{Sinput}
+> save("file.RData")
+> # Chiudo R
+> # ...
+> # Riapro R
+> load("file.RData")
+> # In questo modo ritrovo tutto ciò che avevo caricato prima
+\end{Sinput}
+\end{Schunk}
+
 \end{document}
