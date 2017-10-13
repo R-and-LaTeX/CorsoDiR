@@ -23,6 +23,17 @@ Proviamo con un esempio:
 \input{res/Rnw/20-reading1.Rnw.include.generated}
 
 Per esempio con il \textit{dataset} R ci dice che ci sono $59$ dati nulli.
+Come possiamo eliminare queste celle vuote? Un metodo per farlo è usando la
+seguente funzione:
+
+\input{res/Rnw/20-reading7.Rnw.include.generated}
+
+Questa funzione restituisce il dataset che gli passiamo come argomento, ma
+senza i dati vuoti. Se vogliamo salvare il tutto dobbiamo eseguire
+l'assegnazione ad una nuova variabile, e per fare ciò dobbiamo usare il simbolo
+di assegnazione, che in R è \texttt{<-}.
+
+\section{Variabili quantitative e qualitative}
 
 Con la statistica ci ha insegnato (o avrebbe dovuto) che le variabili possono
 considerarsi di due tipi: qualitative o quantitative. R è in grado di eseguire
@@ -30,3 +41,28 @@ questa distinzione tra le variabili, ma a volte potrebbe sbagliare.
 Fortunatamente il linguaggio stesso ci da la possibilità di controllare il tipo
 delle variabili. Per fare ciò dobbiamo usare il comando:
 
+\input{res/Rnw/20-reading2.Rnw.include.generated}
+
+Questa funzione ci dice se una variabile è qualitativa (rispondendoci con
+\texttt{TRUE}) o quantitativa (rispondendo con \texttt{FALSE}). Se vogliamo far
+interpretare una variabile quantitativa come qualitativa usiamo la funzione:
+
+\input{res/Rnw/20-reading3.Rnw.include.generated}
+
+Questo causerà di far reinventare la variabile ad R da quello che era
+precedentemente a qualitativa.
+
+Se vogliamo far gli alternativi invece possiamo usare per verificare che una
+variabile sia quantitativa
+
+\input{res/Rnw/20-reading4.Rnw.include.generated}
+
+Per convertire una variabile in una variabile quantitativa usiamo il comando:
+
+\input{res/Rnw/20-reading5.Rnw.include.generated}
+
+\section{Esempio finale}
+
+Facendo vedere un esempio completo avremo quindi:
+
+\input{res/Rnw/20-reading6.Rnw.include.generated}

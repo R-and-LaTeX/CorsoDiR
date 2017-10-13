@@ -1,0 +1,20 @@
+<<>>=
+# Carichiamo dei dati di esempio
+library(ISLR)
+data(Hitters)
+
+# Quanti elementi ci sono prima della pulizia?
+dim(Hitters)
+
+# Quante celle son nulle?
+sum(is.na(Hitters))
+
+# Puliamo i dati
+hittersPuliti <- na.omit(Hitters)
+
+# Quanti elementi ci sono dopo la pulizia?
+dim(hittersPuliti)
+
+# Sono rimasti elementi nulli?
+sum(is.na(hittersPuliti))
+@
