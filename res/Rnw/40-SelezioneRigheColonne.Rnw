@@ -15,7 +15,7 @@ R inoltre permette di selezionare più righe (o colonne allo stesso modo). Per
 fare questo basta indicare tra le parentesi quadre \texttt{x1:x2}, dove 
 \texttt{x1} rappresenta la riga di inizio e \texttt{x2}
 
-<<Esempio, eval=FALSE>>=
+<<eval=FALSE>>=
 # Carico una libreria che contiene alcuni dataset
 library(MASS)
 # Caricamento dal dataset Boston
@@ -40,11 +40,11 @@ v[,6:12]
 Solitamente quando si caricano dei dati alle colonne viene associato un nome. 
 In R è possibile sfruttare questo nome per la selezione della colonna, per fare
 questo è sufficiente specificare il nome della variabile che contiene i nostri
-dati, seguito dal simbolo $ e dal nome della colonna. Spesso però non si 
+dati, seguito dal simbolo \$ e dal nome della colonna. Spesso però non si 
 conoscono (ricordano) tutti i nomi delle colonne: in questo caso ci viene in 
 aiuto il comando \texttt{names()} che passata una variabile, visualizza tutti
 i nomi ad essa associata.
-<<Esempio, eval=FALSE>>=
+<<eval=FALSE>>=
 # Carico una libreria che contiene alcuni dataset
 library(MASS)
 # Caricamento dal dataset Boston
@@ -56,10 +56,3 @@ names(v)
 # Accedo alla colonna crim
 v$crim
 @
-
-
-
-
-
-
-
