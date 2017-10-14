@@ -1,7 +1,7 @@
-\section{Selezione di righe e colonne}
-Quando sono stati caricati correttamente i dati spesso è necessaria solamente
-una parte di essi, per la visualizzazione oppure poichè alcuni sono più 
-rilevanti di altri. 
+\chapter{Selezione di righe e colonne}
+Non sempre ci serve visualizzare tutti i dati che abbiamo in R e fortunatamente
+il linguaggio ci aiuta fornendoci la sintassi necessaria per selezionare solo 
+ciò di cui abbiamo bisogno.
 
 Per fare ciò R permette di utilizzare la notazione con le parentesi quadre.
 In pratica presa una variabile con cui possiamo accedere ai nostri dati, 
@@ -16,15 +16,50 @@ fare questo basta indicare tra le parentesi quadre \texttt{x1:x2}, dove
 \texttt{x1} rappresenta la riga di inizio e \texttt{x2}
 
 <<Esempio, eval=FALSE>>=
-library(MASS)
 # Carico una libreria che contiene alcuni dataset
-data(Boston)
+library(MASS)
 # Caricamento dal dataset Boston
-v<-Boston
+data(Boston)
 # Associo a v il dataset
+v<-Boston
+# Seleziono il dato presente alla riga 3 e colonna 6
 v[3,6]
+# Seleziono la riga 3
 v[3,]
+# Seleziono la colonna 6
 v[,6]
+# Seleziono tutti i dati presenti nella colonna 6 dalla
+# riga 3 alla riga 9
 v[3:9,6]
+# Seleziono tutti i dati presenti nella colonna 6 dalla
+# riga 3 alla riga 9
 v[,6:12]
 @
+
+\section{Selezione delle colonne tramite nome}
+Solitamente quando si caricano dei dati alle colonne viene associato un nome. 
+In R è possibile sfruttare questo nome per la selezione della colonna, per fare
+questo è sufficiente specificare il nome della variabile che contiene i nostri
+dati, seguito dal simbolo $ e dal nome della colonna. Spesso però non si 
+conoscono (ricordano) tutti i nomi delle colonne: in questo caso ci viene in 
+aiuto il comando \texttt{names()} che passata una variabile, visualizza tutti
+i nomi ad essa associata.
+<<Esempio, eval=FALSE>>=
+# Carico una libreria che contiene alcuni dataset
+library(MASS)
+# Caricamento dal dataset Boston
+data(Boston)
+# Associo a v il dataset
+v<-Boston
+# Visualizzo i nomi delle colonne in v
+names(v)
+# Accedo alla colonna crim
+v$crim
+@
+
+
+
+
+
+
+
