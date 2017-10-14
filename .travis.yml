@@ -19,3 +19,12 @@ script:
 - make
 before_deploy:
 - git fetch --tags
+deploy:
+  provider: releases
+  api_key:
+    secure: 0l9eHP2njcZMny8io60xDd0pLJeTUSWDcIXVk71CQqGvFFZ61oPX+ku0gFyQTCBIagIvV53XZNhpoC433Fcyy4Zxdt+snDn8RV0up02S5D557EXkSGfRzRr2JyN7DUPBZqqffGZWPugkh7Ey335jfGgwKmcMEy/wRcRS1h1ZCCHL8x1yLjxpuxF+htI+OwX7Afr5WIzPDNDp3Bd/KBnBhyyr7FXssAZ9wgDXssK4mpFEwb+Ah11A4nDwt7KFFjH39VigxJtiy2vSCWKy3d9szD4pdcMpmftkdC5dYLCv5Qea9lPDnhD1KjAN8ezJoKFAqL3U/M6az4z/nMJjbhg0nfXJVIjLc3QHd697r2Tflb4XsseZb2JkDtvgH17CgtAAWSuaQouMMP3mq1hIOoPQ91dGqO3Eas4cMjS83KQn9QiCcrL8zspNb+Vwe6wU7eCeRg9fAwsh7BiOcM4zOBzkeIFqgFZ8ynGWds8gvqp+ip8yZQBliuhqfH84r+6lRhKqViOlsqtWIAB4msfbrxqjzNiDp3gPAy4UAWcGkYO8zgxT15XcS/BDlCuWmpiigneWnYIJuZQoUh5WQLj9cMtEBe/SqeQBvrNi2n4XOTH2Fz8skgHHbg1WEZJ6i9RHnp52ZDRJhk6lvSJv7N4vGDX2OAPHeUYqnSWFCKagFCZcAtU=
+  file: CorsoDiR.pdf
+  skip_cleanup: true
+  on:
+    repo: R-and-LaTeX/CorsoDiR
+    tags: true
