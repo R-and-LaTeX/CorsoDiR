@@ -17,4 +17,17 @@ dim(hittersPuliti)
 
 # Sono rimasti elementi nulli?
 sum(is.na(hittersPuliti))
+
+# Convertiamo una variabile da quantitativa a qualitativa
+# Verifichiamo che Hitters$Walks è una variabile qualitativa
+is.factor(Hitters$Walks)
+
+# Non sembra esserlo. Diciamo a R di salvarla inuna variabile che
+# consideri essere qualitativa
+Hitters$WalksQual <- as.factor(Hitters$Walks)
+
+# Controlliamo che la conversione sia avvenuta correttamente
+is.factor(Hitters$WalksQual)
+
+# Ora Hitters$WalksQual per R è una variabile qualitativa
 @
