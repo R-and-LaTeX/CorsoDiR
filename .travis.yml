@@ -25,8 +25,9 @@ before_script:
     - echo "r = getOption('repos')" >> .Rprofile
     - echo "r['CRAN'] = 'http://cran.uk.r-project.org'" >> .Rprofile
     - echo "options(repos = r)" >> .Rprofile
-    - echo "rm(r)" >> .Rprofile 
+    - echo "rm(r)" >> .Rprofile
     - sudo Rscript -e "install.packages('knitr')"
+    - sudo Rscript -e "install.packages('ISLR')"
 script:
 - make
 before_deploy:

@@ -1,0 +1,70 @@
+% Eliminare colonne vuote
+% Verificare che variabili qualitative lo siano davvero
+\chapter{Leggere correttamente i dati}
+
+A volte può capitare che i dati che abbiamo non siano completi, o che ci sia la
+necessità di verificare che alcune variabili abbiano le proprietà desiderate.
+Per fare ciò R mette a disposizione dei semplici comandi che verranno spiegati
+di seguito.
+
+\section{Filtrare dati letti}
+
+Questa funzionalità è particolarmente utile quanto ci ritroviamo con dei dati
+che possono contenere delle celle ad esempio vuote o con dati che sappiamo non
+essere corretti.
+
+Il comando per vedere se ci sono dati vuoti in un \textit{dataset} è
+\texttt{is.na()}, dove, come parametro della funzione, dobbiamo passare i
+nostri dati. In aggiunta a questo comando possiamo aggiungere \texttt{sum()},
+che permette di contare vari elementi. Combinando \texttt{sum()} con
+\texttt{is.na()} avremo il numero di celle che contengono dati vuoti.
+Proviamo con un esempio:
+
+\input{res/Rnw/20-reading1.Rnw.include.generated}
+
+Per esempio con il \textit{dataset} R ci dice che ci sono $59$ dati nulli.
+Come possiamo eliminare queste celle vuote? Un metodo per farlo è usando la
+seguente funzione:
+
+\input{res/Rnw/20-reading7.Rnw.include.generated}
+
+Questa funzione restituisce il dataset che gli passiamo come argomento, ma
+senza i dati vuoti. Se vogliamo salvare il tutto dobbiamo eseguire
+l'assegnazione ad una nuova variabile, e per fare ciò dobbiamo usare il simbolo
+di assegnazione, che in R è \texttt{<-}.
+
+\section{Variabili quantitative e qualitative}
+
+Come la statistica ci ha insegnato (o avrebbe dovuto) le variabili possono
+considerarsi di due tipi: qualitative o quantitative. R è in grado di eseguire
+questa distinzione tra le variabili, ma a volte potrebbe sbagliare, soprattutto
+quando si caricano dei dati da file\footnote{Questo si verifica spesso se
+stiamo andando a creare un modello statistico.}.
+Fortunatamente il linguaggio stesso ci da la possibilità di controllare il tipo
+delle variabili. Per fare ciò dobbiamo usare il comando:
+
+\input{res/Rnw/20-reading2.Rnw.include.generated}
+
+Questa funzione ci dice se una variabile è qualitativa (rispondendoci con
+\texttt{TRUE}) o quantitativa (rispondendo con \texttt{FALSE}). Se vogliamo far
+interpretare una variabile quantitativa come qualitativa usiamo la funzione:
+
+\input{res/Rnw/20-reading3.Rnw.include.generated}
+
+Questo causerà la reinterpretazione della variabile da parte di R da quello che
+era precedentemente a qualitativa.
+
+Se vogliamo fare gli alternativi invece possiamo usare la seguente funzione per
+verificare che una variabile sia quantitativa:
+
+\input{res/Rnw/20-reading4.Rnw.include.generated}
+
+Per convertire una variabile in una variabile quantitativa usiamo il comando:
+
+\input{res/Rnw/20-reading5.Rnw.include.generated}
+
+\section{Esempio finale}
+
+Facendo vedere un esempio completo avremo quindi:
+
+\input{res/Rnw/20-reading6.Rnw.include.generated}
