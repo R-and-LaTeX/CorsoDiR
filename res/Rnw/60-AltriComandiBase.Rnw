@@ -1,8 +1,3 @@
-\documentclass{book}
-
-\begin{document}
-\SweaveOpts{concordance=TRUE}
-
 \chapter{Altri comandi base}
 
 \section{Pulizia dell'ambiente di lavoro}
@@ -101,5 +96,3 @@ sd(x)
 @
 
 \subsection{Devianza}
-
-\end{document}
