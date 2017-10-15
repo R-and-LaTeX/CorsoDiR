@@ -1,0 +1,105 @@
+\documentclass{book}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+\chapter{Altri comandi base}
+
+\section{Pulizia dell'ambiente di lavoro}
+Dopo un po' che state usando R può capitare che abbiate utilizzato molte
+variabili. Per vedere quali sono il comando da utilizzare è \texttt{ls()} che
+ci restituirà la lista delle variabili allocate. Per eliminarle è possibile 
+sfruttare il comando \texttt{rm} seguito dal nome della varibile che vogliamo
+rimuovere. Per rimuoverle tutte è sufficiente dare il comando 
+\texttt{rm(list=ls())} 
+<<>>=
+# Dichiaro un po' di variabili
+a = 0; b = 1; c = 2; #...
+# Guardo la lista delle variabili
+ls()
+# Rimuovo 'a'
+rm(a)
+# Controllo che 'a' sia stata rimossa
+ls()
+# Rimuovo tutte le variabili
+rm(list=ls())
+# Controllo che non ci siano più variabili
+ls()
+@
+
+\section{Dimensioni di una variabile}
+Quando carichiamo dei dati in forma tabellare è interessante avere la 
+possibilità di poter accedere al numero di righe e di colonne che sono presenti
+nella tabella. Per fare questo è sufficiente utilizzare il comando 
+\texttt{dim()} specificando la variabile di cui vogliamo sapere le dimensioni.
+<<>>=
+# Carichiamo la libreria MASS
+library(MASS)
+# Carichiamo il dataset Boston
+data(Boston)
+#controlliamo le dimensioni del dataset
+dim(Boston)
+@
+Se, invece, invochiamo la funzione \texttt{dim()} su di una variabile normale
+come una lista oppure un numero R ci restituirà \texttt{NULL}. Per accedere
+alla lunghezza di una lista il comando da utilizzare è \texttt{length()}.
+<<>>=
+# Dichiaro una lista
+a = c(0,1,2)
+# Provo ad accedere alla lunghezza con `dim()`
+dim(a)
+# Provo ad accedere alla lunghezza con `length()`
+length(a)
+@
+
+\section{Alcuni indicatori sui dati}
+R è un linguaggio di programmazione specifico per l'analisi statistica, 
+pertanto ci fornisce in maniera molto semplice la possibilità di accedere a
+molte funzioni utili in statistica.
+
+\subsection{Varianza}
+Per calcolare la varianza in R è sufficiente invocare la funzione 
+\texttt{var()} su di una lista di dati.
+<<>>=
+x = c(1, 2.3, 4.5, 6.7, 8.9)
+var(x)
+@
+
+\subsection{Covarianza}
+Anche il calcolo della covarianza è molto semplice. Infatti è sufficiente
+invocare il comando \texttt{cov()}, passando le due liste di dati sulle quali 
+si vuole tale funzione.
+<<>>=
+x = c(1, 2.3, 4.5, 6.7, 8.9); y = c(1.3, 4.2, 3.3, 8.7, 3.7);
+cov(x,y)
+@
+
+\subsection{Moda}
+R non prevede invece alcuna funzione già pronta per il calcolo della moda. È 
+però molto semplice creare la propria funzione per ricavare tale indicatore.
+<<>>=
+mode = function(x) {
+  # Prendo tutti i valori in `x` senza ripetizioni
+  ux <- unique(x) 
+  # Prendo tra i valori in `ux` quello con frequenza più alta
+  ux[which.max(tabulate(match(x, ux)))]
+}
+@
+In questo modo, dopo aver definito tale funzione, è possibile utilizzarla come
+una qualsiasi funzione di R.
+<<>>=
+x = c(1,2,3,4,1,4,2,3,4)
+mode(x)
+@
+
+\subsection{Deviazione standard}
+Per calcolare la deviszione standard di una lista di dati è possibile 
+utilizzare il comando \texttt{sd()}.
+<<>>=
+x = c(4, 2, 5, 8, 6)
+sd(x)
+@
+
+\subsection{Devianza}
+
+\end{document}
