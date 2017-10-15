@@ -1,0 +1,8 @@
+<<>>=
+
+library(ISLR)
+data(Hitters)
+dim(Hitters)
+
+sum(is.na(Hitters))
+@

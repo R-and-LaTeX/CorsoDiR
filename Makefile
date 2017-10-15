@@ -4,13 +4,27 @@
 OUTPUT_NAME= CorsoDiR
 LIST_NAME= listOfSections.tex
 PATH_OF_CONTENTS= res/sections
+PATH_OF_RNW= res/Rnw
 MAIN_FILE= main
 CC= latexmk
 JOB_NAME=-jobname='$(OUTPUT_NAME)'
-CCFLAGS= -pdflatex='pdflatex -interaction=nonstopmode' -pdf
+CCFLAGS= -pdflatex='pdflatex -interaction=nonstopmode' -pdf 
 SHELL := /bin/bash #Need bash not shell
 
-all: compile
+all: rinclude rparsing compile
+
+rinclude:
+	for i in $(wildcard $(PATH_OF_RNW)/*.Rnw.include); do \
+		echo "Compiling $(notdir $$i)..."; \
+		Rscript -e "library(knitr); knit('$$i', '$$i.generated.tex')"; \
+	done; \
+
+rparsing:
+	for i in $(wildcard $(PATH_OF_RNW)/*.Rnw); do \
+		echo "Compiling $$i..."; \
+		Rscript -e "library(knitr); knit('$$i', '$$i.generated.tex')"; \
+		mv $$i.generated.tex $(PATH_OF_CONTENTS); \
+	done; \
 
 compile:
 	if [[ -a "res/$(LIST_NAME)" ]]; then echo "Removing res/$(LIST_NAME)"; \

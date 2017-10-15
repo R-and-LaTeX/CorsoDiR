@@ -15,6 +15,19 @@ addons:
     - texlive-lang-italian
     - latex-xcolor
     - pgf
+before_script:
+    - sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu trusty/" >> /etc/apt/sources.list'
+    - gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
+    - gpg -a --export E084DAB9 | sudo apt-key add -
+    - sudo apt-get update
+    - sudo apt-get -y install r-base
+    - mkdir -p ~/data/Rpackages/
+    - echo "r = getOption('repos')" >> .Rprofile
+    - echo "r['CRAN'] = 'http://cran.uk.r-project.org'" >> .Rprofile
+    - echo "options(repos = r)" >> .Rprofile
+    - echo "rm(r)" >> .Rprofile
+    - sudo Rscript -e "install.packages('knitr')"
+    - sudo Rscript -e "install.packages('ISLR')"
 script:
 - make
 before_deploy:
