@@ -1,0 +1,7 @@
+<<>>=
+library(ISLR)
+data(Hitters)
+
+# Vediamo le variabili e i valori descritti prima per questo dataset
+summary(Hitters)
+@
