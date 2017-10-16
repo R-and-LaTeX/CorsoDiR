@@ -1,0 +1,11 @@
+<<>>=
+library(ISLR)
+data(Hitters)
+
+# Visualizziamo solamente le variabili contenute in questo dataset
+names(Hitters)
+
+# Vogliamo solamente vedere i dati relativi a "Runs"
+summary(Hitters$Runs)
+
+# Ta-dan! Meno output!@

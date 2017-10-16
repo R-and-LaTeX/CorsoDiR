@@ -1,0 +1,52 @@
+\chapter{Comandi base}
+
+\section{Summary}
+
+Quando abbiamo un sacco di dati ci potrebbe essere utile avere una visione
+d'insieme. Qual è la media degli studenti del corso? Più o meno di ventordici?
+Chi è il più scansafatiche? E il più diligente? Sono presenti elementi che si
+discostano fortemente dalla media\footnote{Detti anche \textit{outlier}}?
+\texttt{R} fornisce uno strumento per ognugna di queste domande, ma siccome in
+media gli informatici son pigri\footnote{Chi ha voglia in fondo di premere tutti
+quei tasti sulla tastiera? Una faticaccia!} esiste un comando che li riassume
+tutti, che si chiama \texttt{summary()}\footnote{Del resto chi se lo poteva
+immaginare? Manco fosse il titolo della sezione...}, che fornisce le seguenti
+indicazioni:
+\begin{itemize}
+ \item Il valore \textbf{minimo} di ogni variabile
+ \item Il \textbf{primo quartile} di ogni variabile
+ \item La \textbf{mediana} di ogni variabile nel dataset
+ \item Le \textbf{media} di ogni variabile nel dataset
+ \item Il \textbf{terzo quartile} di ogni variabile
+ \item Il valore \textbf{massimo} di ogni variabile
+\end{itemize}
+
+Vediamo subito un esempio:
+
+\input{res/Rnw/50-summary1.Rnw.include.generated}
+
+Come possiamo notare, questo è utile, ma se abbiamo dataset grandi con un sacco
+di variabili magari può essere una rottura, specialmente per la quantità di
+output che viene mostrata a schermo. Per ridurre possiamo visualizzare
+solamente una parte di esso.
+
+\input{res/Rnw/50-summary2.Rnw.include.generated}
+
+\section{Smontando Summary}
+
+È giunto il momento di ``smontare'' \texttt{summary()} e vedere che meraviglie
+nasconde sotto il cofano. Prima abbiamo detto che è solo un comando che ne
+racchiude altri. Questi sono:
+\begin{itemize}
+ \item Per il minimo, il comando è \texttt{min()}
+ \item Per i quartili il comando è \texttt{quantile()} che ci farà
+vedere tutti i quartili (quelli a $\frac{0}{4}, \frac{1}{4}, \frac{2}{4},
+\frac{3}{4}, \frac{4}{4}$)
+ \item Per la mediana il comando è \texttt{median()}
+ \item Per la media il comando è \texttt{mean()}
+ \item Il massimo si ricava con \texttt{max()}
+\end{itemize}
+
+Per parafrasare i libri di matematica, la dimostrazione che le seguenti
+funzioni diano gli stessi esatti risultati di valori che vengono stampati a
+video da \texttt{summary()} è lasciata al lettore.
