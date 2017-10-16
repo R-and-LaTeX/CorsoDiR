@@ -10,7 +10,7 @@ Per fare ciò è necessario utilizzare il comando \texttt{xtable}, specificando:
   \item \texttt{type} che può assumere come valori \texttt{latex} o 
   \texttt{html} a seconda del formato voluto;
   \item \texttt{caption} per aggiungere alla tabella una didascalia;
-  \item \item{label} per dare alla tabella un identificcativo (utile nel caso
+  \item \texttt{label} per dare alla tabella un identificcativo (utile nel caso
   si esporti la tabella in\LaTeX{} per i collegamenti ipertestuali).
 \end{itemize}
 Come per gli altri comandi visti in precedenza è possibile aggiungere 
