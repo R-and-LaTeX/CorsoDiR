@@ -28,6 +28,7 @@ before_script:
     - echo "rm(r)" >> .Rprofile
     - sudo Rscript -e "install.packages('knitr')"
     - sudo Rscript -e "install.packages('ISLR')"
+    - sudo Rscript -e "install.packages('xtable')"
 script:
 - make
 before_deploy:
