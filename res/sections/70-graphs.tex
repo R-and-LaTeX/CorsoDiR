@@ -33,6 +33,25 @@ Vediamo come funziona:
 
 \input{res/Rnw/70-graphs2.Rnw.include.generated}
 
+Come possiamo notare, abbiamo utilizzato delle nuove funzionalità di R.
+
+\paragraph*{\texttt{sapply()}} Questa funzione, applicata ad un dataset, serve
+per applicare la funzione passata come secondo argomento per tutte le variabili
+che il dataset che contiene.
+
+\paragraph*{\texttt{levels()}} La funzionalità di \texttt{levels()}, quando
+applicata ad una variabile qualitativa, è quella di visualizzare i vari livelli
+della variabile stessa. È comodo per conoscere in anticipo i nomi della
+categorizzazione, così da poterli riscrivere al momento della della creazione
+del grafico a torta.
+
+\paragraph*{\texttt{c()}} \texttt{c()} è un'abbreviazione per
+\textit{concatenate}, ed è utile in quanto ogni volta che si passano argomenti
+a questa funzione questi vengono concatenati e viene ritornato un
+\textit{array} con essi contenuti. In \texttt{R} è utile in quanto alcune
+funzioni accettano \textit{array} come parametri, e \texttt{c()} permette di
+crearli facilmente senza salvare altre variabili.
+
 \section{Dispersione}
 
 \section{Boxplot}
