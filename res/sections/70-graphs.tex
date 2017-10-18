@@ -70,7 +70,25 @@ piccoli e poco visibili.}.
 
 \section{Boxplot}
 
+A volte potrebbe essere utile vedere in maniera grafica se due variabili nel 
+nostro \textit{dataset} sono correlate tra di loro. Oltre a questo scopo, un 
+boxplot di una sola variabile ci permette di capire la distribuzione dei punti, 
+evidenziando dei possibili \textit{outlier}.
 
+Il comando per creare un boxplot è \texttt{boxplot()}.
+
+\subsection{Boxplot con una variabile}
+
+Fare un boxplot con una variabile è molto semplice:
+
+\input{res/Rnw/70-graphs5.Rnw.include.generated}
+
+\subsection{Boxplot con più variabili}
+
+Come detto, un \texttt{Boxplot} è utile per poter confrontare graficamente la 
+correlazione tra due variabili. Ad esempio:
+
+\input{res/Rnw/70-graphs6.Rnw.include.generated}
 
 \section{Altri comandi secondari}
 
@@ -89,4 +107,16 @@ una retta orizzontale con l'altezza che abbiamo desiderato.
 È anche possibile selezionare un determinato colore della retta, tramite
 l'opzione \texttt{col}.
 
-% TODO spiegare i comandi abline, mfrow e par
+\subsection{\texttt{par()} e \texttt{mfrow()}}
+
+Potrebbe essere utile dover confrontare facilmente due grafici. Purtroppo 
+quando si crea un nuovo grafico \texttt{R} cancella quello precedente, e quindi 
+è necessario dire al linguaggio in qualche maniera che ne vogliamo tenere due o 
+più nella stessa finestra.
+Per fare ciò esiste il comando \texttt{par()}, che insieme a \texttt{mfrow()} 
+permette di creare ``una griglia'' di immagini affiancate.
+Ad esempio, il comando
+
+\input{res/Rnw/70-graphs7.Rnw.include.generated}
+
+Permette di dividere lo schermo in una griglia $n \cdot n$.
