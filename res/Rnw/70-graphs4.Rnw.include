@@ -1,0 +1,11 @@
+<<eval=FALSE>>=
+
+library(MASS)
+data(Boston)
+
+# Disegniamo il grafico come prima
+plot(Boston$crim, Boston$medv)
+
+# Aggiungiamoci una linea retta, rosa!
+abline(h=30, col='pink')
+@
