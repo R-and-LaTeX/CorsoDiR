@@ -1,4 +1,4 @@
-\section{Caricamento dati da file}
+\chapter{Caricamento dati da file}
 R da la possibilità di caricare dati che sono salvati in differenti formati:
 \begin{itemize}
   \item txt
@@ -7,12 +7,12 @@ R da la possibilità di caricare dati che sono salvati in differenti formati:
   \item RData
 \end{itemize}
 Per ogniuna di queste estensioni ci sono varie modalità di lettura dei dati e 
-noi ne vedremo una per ciascuno di questi. R mette a disposizione il comando 
-\texttt{read.table} che è un comando generico per laggere dati da file.
+noi ne vedremo una per ciascuno di essi. R mette a disposizione il comando 
+\texttt{read.table()} che è un comando generico per laggere dati da file.
 
-\subsection{Caricamento da txt}
+\section{Caricamento da file di testo}
 Per caricare i dati da un file con estensione \textbf{txt} è possibile utilizzare
-il comando \texttt{read.delim} al quale è necessario specificare alcune opzioni:
+il comando \texttt{read.delim()} al quale è necessario specificare alcune opzioni:
 \begin{itemize}
   \item il nome del file(se il file è nella stessa cartella da cui lanciamo R)
   oppure il percorso del file, specificato tra virgolette;
@@ -23,7 +23,7 @@ il comando \texttt{read.delim} al quale è necessario specificare alcune opzioni
   cifre decimali.
 \end{itemize}
 A questo comando possono essere specificate anche altre opzioni, qui sono 
-riportate le principale. Per una lista esaustiva è sufficiente dare il comando
+riportate le principali. Per una lista esaustiva è sufficiente dare il comando
 \texttt{?read.delim}.
 
 <<eval=FALSE>>=
@@ -35,10 +35,10 @@ read.delim("file.txt", header = TRUE, sep = "\t", dec = ",")
 # notazione italiana
 @
 
-\subsection{Caricamento da csv}
+\section{Caricamento da csv}
 Il caricamento dei dati da file \textbf{csv} procede in maniera analoga al 
 precedente, l'unica differenza è che il comando da utilizzare questa volta è
-\texttt{read.csv}. Le opzioni da specificare successivamente sono le stesse
+\texttt{read.csv()}. Le opzioni da specificare successivamente sono le stesse
 del caso di file con estensione \emph{txt}. Nel caso in cui non venga 
 specificato alcun separatore quello di default utilizzato è la virgola.
 <<eval=FALSE>>=
@@ -48,22 +48,21 @@ read.csv("file.csv", header = TRUE)
 # della tabella
 @
 
-\subsection{Caricamento da xls}
+\section{Caricamento da file Excel (fino al 2003)}
 Per accedere ai dati salvati in formato \textbf{xls} (il formato di Excel 
 fino al 2007) è necessario importare una libreria chiamata \texttt{gdata}
 tramite il comando \texttt{library(gdata)} (nel caso non fosse installata
 è possibile aggiungerla alle librerie disponibili in locale tramite 
 \texttt{install.packages('gdata')}). A questo punto è possibile dare il 
-comando \texttt{read.xls}, al quale è possibile specificare i seguenti:
+comando \texttt{read.xls()}, al quale è possibile specificare i seguenti:
 \begin{itemize}
-  \item il nome del file(se il file è nella stessa cartella da cui lanciamo R)
+  \item il nome del file (se il file è nella stessa cartella da cui lanciamo R)
   oppure il percorso del file, specificato tra virgolette;
   \item \texttt{sheet} per specificare il nome o il numero del foglio che 
   vogliamo caricare.
 \end{itemize}
-Anche in questo caso è possibile specificare altre opzione che però noi non 
-vedremo. È inoltre possibile specificare alcune delle opzioni disponibili per 
-gli altri formati.
+Anche in questo caso è possibile specificare altre opzioni proprie del comando
+e alcune altre invece disponibili anche per gli altri formati.
 <<eval=FALSE>>=
 library(gdata)
 read.xls("file.xls", header = TRUE, sheet=2)
@@ -71,13 +70,13 @@ read.xls("file.xls", header = TRUE, sheet=2)
 # 'file.xls', dove la prima è sempre una riga di intestazione
 @
 
-\subsection{Caricamento da xlsx}
+\section{Caricamento da file Excel (dopo il 2003)}
 Per caricare i dati salvati in \textbf{xlsx} (il formato di Excel dal 2007) 
 è necessario utilizzare la libreria \texttt{xlsx}
 tramite il comando \texttt{library(xlsx)} (nel caso non fosse installata
 è possibile aggiungerla alle librerie disponibili in locale tramite 
 \texttt{install.packages('xlsx')}). A questo punto è possibile dare il 
-comando \texttt{read.xlsx}, al quale è possibile specificare i seguenti:
+comando \texttt{read.xlsx()}, al quale è possibile specificare i seguenti:
 \begin{itemize}
   \item il nome del file(se il file è nella stessa cartella da cui lanciamo R)
   oppure il percorso del file, specificato tra virgolette;
@@ -86,7 +85,7 @@ comando \texttt{read.xlsx}, al quale è possibile specificare i seguenti:
   \item \texttt{sheetName} per indicarne il nome.
 \end{itemize}
 Come negli altri casi è possibile definire altre opzioni.
-\paragraph*{NB} Con il comando \texttt{read.xlsx} \textbf{è obbligatorio} 
+\paragraph*{NB} Con il comando \texttt{read.xlsx()} \textbf{è obbligatorio} 
 indicare o il numero del foglio di cui si vogliono caricare i dati o
 il nome dello stesso.
 
@@ -98,7 +97,7 @@ read.xlsx("file.xlsx", header=TRUE, sheetName="prova")
 # intestazioni
 @
 
-\subsection{Caricamento da RData}
+\section{Caricamento da RData}
 Certe volte invece si vogliono salvare i dati che sono utilizzati durante
 l'utilizzo di R. Per fare ciò è possibile utilizzare il comando 
 \texttt{save} al quale dobbiamo passare il nome con cui vogliamo memorizzare

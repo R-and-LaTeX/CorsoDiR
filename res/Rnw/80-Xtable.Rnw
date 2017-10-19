@@ -1,0 +1,33 @@
+\chapter{Comandi avanzati}
+
+\section{xtable}
+R prevede una miriade di librerie per le più svariate situazioni. Una molto 
+utile è \texttt{xtable}. Questa libreria infatti permette di esportare i dati
+che abbiamo nel nostro ambiente sottoforma di tabella \LaTeX{} o HTML.
+Per fare ciò è necessario utilizzare il comando \texttt{xtable}, specificando:
+\begin{itemize}
+  \item i dati che devono essere messi nella tabella;
+  \item \texttt{type} che può assumere come valori \texttt{latex} o 
+  \texttt{html} a seconda del formato voluto;
+  \item \texttt{caption} per aggiungere alla tabella una didascalia;
+  \item \texttt{label} per dare alla tabella un identificcativo (utile nel caso
+  si esporti la tabella in\LaTeX{} per i collegamenti ipertestuali).
+\end{itemize}
+Come per gli altri comandi visti in precedenza è possibile aggiungere 
+specificare altre opzioni che però noi non vedremo. \texttt{xtable()} però,
+se utilizzato da solo, ci restituisce la tabella sul terminale. Per salvarla su
+file possiamo usare questo comando insieme a \texttt{print()}.
+<<>>=
+# Carico la libreria `xtable`
+library(xtable)
+# Carico la libreria `MASS`
+library(MASS)
+# Carico il dataset `Boston`
+data(Boston)
+# Salvo tutte le righe dalla 1 alla 10 e tutte le colonne dalla 1 
+# alla 4 in formato LaTeX in un file che si chiama `tab.tex`
+# specificando un identificativo e una didascalia
+print(xtable(Boston[1:10, 1:4], type = "latex", 
+             caption="Esempio tabella", label="tab:esempio"), 
+      floating = TRUE, file = "tab.tex")
+@
