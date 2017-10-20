@@ -1,0 +1,133 @@
+\chapter{Grafici}
+
+Arriviamo a esplorare una delle molteplici punte di diamante che questo
+linguaggio possiede. R, infatti, non è solamente un ottimo linguaggio per i
+calcoli di natura statistica, ma permette anche di creare diverse tipologie di
+grafici, partendo da quelli semplici per arrivare a quelli più avanzati, con
+didascalia e legenda per esempio.
+I grafici che vedremo sono:
+\begin{itemize}
+ \item Istogramma
+ \item Torta
+ \item Dispersione
+ \item Boxplot
+\end{itemize}
+
+Alla fine esploreremo comandi di contorno per migliorare i nostri grafici.
+
+\section{Istogramma}
+
+Per creare degli istogrammi il comando da usare è \texttt{hist()}. Vediamo
+subito un esempio:
+
+\input{res/Rnw/70-graphs1.Rnw.include.generated}
+
+Oltre a \texttt{xlab} è anche presente \texttt{ylab} per inserire
+\textit{label} nell'asse delle \texttt{y}.
+
+\section{Torta}
+
+I grafici a torta sono utili per poter rappresentare dati in maniera visuale e
+semplice da capire per il lettore.
+Vediamo come funziona:
+
+\input{res/Rnw/70-graphs2.Rnw.include.generated}
+
+Come possiamo notare, abbiamo utilizzato delle nuove funzionalità di R.
+
+\paragraph*{\texttt{sapply()}} Questa funzione, applicata ad un dataset, serve
+per applicare la funzione passata come secondo argomento per tutte le variabili
+che il dataset che contiene.
+
+\paragraph*{\texttt{levels()}} La funzionalità di \texttt{levels()}, quando
+applicata ad una variabile qualitativa, è quella di visualizzare i vari livelli
+della variabile stessa. È comodo per conoscere in anticipo i nomi della
+categorizzazione, così da poterli riscrivere al momento della della creazione
+del grafico a torta.
+
+\paragraph*{\texttt{c()}} \texttt{c()} è un'abbreviazione per
+\textit{concatenate}, ed è utile in quanto ogni volta che si passano argomenti
+a questa funzione questi vengono concatenati e viene ritornato un
+\textit{array} con essi contenuti. In \texttt{R} è utile in quanto alcune
+funzioni accettano \textit{array} come parametri, e \texttt{c()} permette di
+crearli facilmente senza salvare altre variabili.
+
+\section{Dispersione}
+
+I grafici a dispersione permettono di rappresentare un insieme di punti in un
+grafico. In \texttt{R} questi si chiamano \textit{Scatterplot}, e il comando
+per poterli disegnare è tramite la funzione \texttt{plot()}, a cui andranno
+passate due variabili. Vediamo un esempio:
+
+\input{res/Rnw/70-graphs3.Rnw.include.generated}
+
+Se volessimo vedere un grafico di dispersione dei punti tra tutte le variabili
+nel nostro \textit{dataset} possiamo utilizzare la funzione \texttt{plot()}
+direttamente sul dataset. Usando questo comando però potrebbe richiedere una
+buona quantità di risorse al nostro computer, quindi quando diamo questo
+comando prestiamo attenzione\footnote{I grafici poi potrebbero risultare molto
+piccoli e poco visibili.}.
+
+\section{Boxplot}
+
+A volte potrebbe essere utile vedere in maniera grafica se due variabili nel 
+nostro \textit{dataset} sono correlate tra di loro. Oltre a questo scopo, un 
+boxplot di una sola variabile ci permette di capire la distribuzione dei punti, 
+evidenziando dei possibili \textit{outlier}.
+
+Il comando per creare un boxplot è \texttt{boxplot()}.
+
+\subsection{Boxplot con una variabile}
+
+Fare un boxplot con una variabile è molto semplice:
+
+\input{res/Rnw/70-graphs5.Rnw.include.generated}
+
+\subsection{Boxplot con più variabili}
+
+Come detto, un \texttt{Boxplot} è utile per poter confrontare graficamente la 
+correlazione tra due variabili. Ad esempio:
+
+\input{res/Rnw/70-graphs6.Rnw.include.generated}
+
+\section{Altri comandi secondari}
+
+Oltre ai comandi visti fin'ora per eseguire grafici, ne esistono di aggiuntivi
+che vedremo qui di seguito.
+
+\subsection{\texttt{abline()}}
+
+Questa funzione ha la comoda funzionalità di disegnare linee in un grafico già
+esistente. Vediamo:
+
+\input{res/Rnw/70-graphs4.Rnw.include.generated}
+
+Come possiamo notare, per esempio in questo caso \texttt{h} indica di disegnare
+una retta orizzontale con l'altezza che abbiamo desiderato.
+È anche possibile selezionare un determinato colore della retta, tramite
+l'opzione \texttt{col}.
+
+\subsection{\texttt{par()} e \texttt{mfrow()}}
+
+Potrebbe essere utile dover confrontare facilmente due grafici. Purtroppo 
+quando si crea un nuovo grafico \texttt{R} cancella quello precedente, e quindi 
+è necessario dire al linguaggio in qualche maniera che ne vogliamo tenere due o 
+più nella stessa finestra.
+Per fare ciò esiste il comando \texttt{par()}, che insieme a \texttt{mfrow()} 
+permette di creare ``una griglia'' di immagini affiancate.
+Ad esempio, il comando
+
+\input{res/Rnw/70-graphs7.Rnw.include.generated}
+
+Permette di dividere lo schermo in una griglia $n \cdot n$.
+
+\section{Salvare su file}
+
+Potrebbe essere comodo salvare su file i grafici ottenuti, per poterli 
+conservare o riutilizzare in altri progetti.
+Il comando è \texttt{png()}, che permette di salvare un png dell'immagine 
+attualmente disegnata a schermo su file.
+Vediamo come funziona:
+
+\input{res/Rnw/70-graphs8.Rnw.include.generated}
+
