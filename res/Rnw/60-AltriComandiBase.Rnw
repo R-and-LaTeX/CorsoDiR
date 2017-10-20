@@ -94,5 +94,3 @@ utilizzare il comando \texttt{sd()}.
 x = c(4, 2, 5, 8, 6)
 sd(x)
 @
-
-\subsection{Devianza}
