@@ -145,3 +145,4 @@ res/sections/*.Rnw.generated.tex
 .Rhistory
 
 .fuse_hidden*
+res/Rnw/tab.tex
