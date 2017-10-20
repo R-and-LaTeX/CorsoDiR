@@ -1,0 +1,7 @@
+<<eval=FALSE>>=
+library(MASS)
+data(Boston)
+
+# Vediamo in un confronto tra due variabili con poca correlazione
+boxplot(Boston$medv, Boston$crim)
+@

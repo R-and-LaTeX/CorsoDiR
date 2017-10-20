@@ -8,4 +8,5 @@ names(Hitters)
 # Vogliamo solamente vedere i dati relativi a "Runs"
 summary(Hitters$Runs)
 
-# Ta-dan! Meno output!@
+# Ta-dan! Meno output!
+@

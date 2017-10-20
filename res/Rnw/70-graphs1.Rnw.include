@@ -1,0 +1,22 @@
+<<eval=FALSE>>=
+library(MASS)
+
+# Carichiamo dei dati riguardanti abitazioni a Boston
+data(Boston)
+
+# Creiamo un semplicissimo istogramma con la rappresentazione
+# delle frequenze per la variabile Boston$medv.
+hist(Boston$medv)
+
+# Creiamo lo stesso grafico in cui invece ne rappresentiamo la
+# densità
+hist(Boston$medv, prob=TRUE)
+
+# Aggiungiamo ora anche una descrizione nell'asse delle x con xlab
+hist(Boston$medv, prob=TRUE, xlab='Prezzo mediano delle abitazioni')
+
+# Diamo un titolo al grafico, chiamiamolo 'Istogramma' per essere 
+# fantasiosi
+hist(Boston$medv, prob=TRUE, xlab='Prezzo mediano delle abitazioni',
+     main='Istogramma')
+@

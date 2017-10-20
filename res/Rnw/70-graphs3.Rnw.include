@@ -1,0 +1,8 @@
+<<eval=FALSE>>=
+library(MASS)
+data(Boston)
+
+# Creiamo un grafico di dispersione tra il crimine per capita nella
+# città e la mediana delle case occupate in migliaia di dollari.
+plot(Boston$crim, Boston$medv)
+@

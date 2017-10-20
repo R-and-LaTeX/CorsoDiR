@@ -1,0 +1,13 @@
+<<eval=FALSE>>=
+library(MASS)
+data(Boston)
+
+# Salviamo il grafico su pdf
+png(filename="Graph.png")
+
+#Disegniamo
+boxplot(Boston$medv, Boston$crim)
+
+# Stampiamo
+dev.off()
+@

@@ -1,0 +1,12 @@
+<<eval=FALSE>>=
+library(MASS)
+data(Boston)
+
+# Creiamo il nostro boxplot per la variabile medv
+boxplot(Boston$medv)
+
+# Aggiungiamo qualche informazione addizionale
+# come l'etichetta sulle X e il nome del Boxplot
+boxplot(Boston$medv, xlab='Prezzo mediano delle abitazioni',
+        main='Boxplot')
+@
